@@ -1,6 +1,4 @@
 
-
-
 let myLibrary = [{
   title: 'title',
   author: 'author',
@@ -22,14 +20,20 @@ function addBookToLibrary() {
   let pages = document.getElementById('pages').value;
   let status = document.getElementById('status').value;
 
-  let currentBook = {
-    title: title,
-    author: author,
-    pages: pages,
-    status: status, 
+  if (title && author && pages && status) {
+    
+    let currentBook = {
+      title: title,
+      author: author,
+      pages: pages,
+      status: status, 
+    }
+    
+    myLibrary.push(currentBook);
+
+  } else {
+    alert('Please fill out all fields.');
   }
-  
-  myLibrary.push(currentBook);
 }
 
 function render(array) {
@@ -39,8 +43,23 @@ function render(array) {
   }
 
   array.forEach(item => {
-    let book = document.createElement('div');
-    book.textContent = JSON.stringify(item);
+    let book = document.createElement('tr');
+
+    let title = document.createElement('td');
+    let author = document.createElement('td');
+    let pages = document.createElement('td');
+    let status = document.createElement('td');
+
+    title.textContent = item.title;
+    author.textContent = item.author;
+    pages.textContent = item.pages;
+    status.textContent = item.status;
+
+    book.appendChild(title);
+    book.appendChild(author);
+    book.appendChild(pages);
+    book.appendChild(status);
+
     container.appendChild(book);
   })
 }
