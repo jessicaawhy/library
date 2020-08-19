@@ -10,7 +10,7 @@
 
   <button id="add-book" onclick="">NEW BOOK</button>
 
-  <form id="new-book-form" action="" method="">
+  <form id="new-book-form" onsubmit="return false">
     <ul>
       <li>
         <label for="title">Title:</label>
@@ -29,7 +29,7 @@
         <input id="status" type="text" id="status" name="read-status">
       </li>
       <li>
-        <button onclick="addBookToLibrary(); render(myLibrary);" id="submit" type="button">submit</button>
+        <button onclick="addBookToLibrary(); render(myLibrary);" id="submit" type="submit">submit</button>
       </li>
     </ul>
   </form>

@@ -29,6 +29,8 @@ function addBookToLibrary() {
     }
     
     myLibrary.push(currentBook);
+    form.reset();
+    toggleDisplay();
 
   } else {
     alert('Please fill out all fields.');
