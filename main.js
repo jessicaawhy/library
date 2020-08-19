@@ -1,6 +1,4 @@
 
-// const submit = document.querySelector('#submit');
-// submit.addEventListener('submit', addBookToLibrary);
 
 
 let myLibrary = [{
@@ -16,7 +14,6 @@ let myLibrary = [{
 }];
 
 // function Book(title, author, pages, status) {
-
 // }
 
 function addBookToLibrary() {
@@ -29,7 +26,7 @@ function addBookToLibrary() {
     title: title,
     author: author,
     pages: pages,
-    status: status,
+    status: status, 
   }
   
   myLibrary.push(currentBook);
@@ -37,9 +34,15 @@ function addBookToLibrary() {
 
 function render(array) {
   const container = document.querySelector('#container');
+  while(container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+
   array.forEach(item => {
     let book = document.createElement('div');
     book.textContent = JSON.stringify(item);
     container.appendChild(book);
   })
 }
+
+render(myLibrary);
