@@ -1,4 +1,3 @@
-
 let myLibrary = [{
   title: 'title',
   author: 'author',
@@ -64,4 +63,14 @@ function render(array) {
   })
 }
 
+const addBook = document.querySelector('#add-book');
+const form = document.querySelector('#new-book-form');
+addBook.addEventListener('click', toggleDisplay);
+
+
+function toggleDisplay() {
+  form.classList.toggle('toggle-visibility');
+}
+
+// initial
 render(myLibrary);

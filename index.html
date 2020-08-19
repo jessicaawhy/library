@@ -2,28 +2,15 @@
 <html>
 
 <head>
+<link href="./style.css" rel="stylesheet">
   
 </head>
 <body>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Pages</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody id="container">
+  <h1>Library</h1>
 
+  <button id="add-book" onclick="">NEW BOOK</button>
 
-
-    </tbody>
-  </table>
-
-  <button id="add-book">NEW BOOK</button>
-  
-  <form action="" method="">
+  <form id="new-book-form" action="" method="">
     <ul>
       <li>
         <label for="title">Title:</label>
@@ -46,6 +33,19 @@
       </li>
     </ul>
   </form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="container"></tbody>
+  </table>
+
   <script src="./main.js"></script>
 </body>
 
