@@ -2,22 +2,28 @@ let myLibrary = [{
   title: 'title',
   author: 'author',
   pages: 5,
-  status: 'status',
+  status: 'Read',
 },{
   title: 'title',
   author: 'author',
   pages: 3,
-  status: 'status',
+  status: 'Not Read',
 }];
 
 // function Book(title, author, pages, status) {
 // }
 
+
 function addBookToLibrary() {
   let title = document.getElementById('title').value;
   let author = document.getElementById('author').value;
   let pages = document.getElementById('pages').value;
-  let status = document.getElementById('status').value;
+  let status;
+  if (document.getElementById('read').checked) {
+    status = 'Read';
+  } else if (document.getElementById('not-complete').checked) {
+    status = 'Not Read';
+  }
 
   if (title && author && pages && status) {
     
@@ -43,7 +49,7 @@ function render(array) {
     container.removeChild(container.firstChild);
   }
 
-  array.forEach(item => {
+  array.forEach((item, index) => {
     let book = document.createElement('tr');
 
     let title = document.createElement('td');
@@ -60,6 +66,8 @@ function render(array) {
     book.appendChild(author);
     book.appendChild(pages);
     book.appendChild(status);
+    
+    book.setAttribute('id', index);
 
     container.appendChild(book);
   })

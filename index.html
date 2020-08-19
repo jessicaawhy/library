@@ -25,8 +25,10 @@
         <input id="pages" type="number" id="pages" name="book-pages">
       </li>
       <li>
-        <label for="status">Status</label>
-        <input id="status" type="text" id="status" name="read-status">
+        <label for="read">Read</label>
+        <input id="read" type="radio" name="read-status" onclick="">
+        <label for="not-complete">Not complete</label>
+        <input id="not-complete" type="radio" name="read-status" onclick="">
       </li>
       <li>
         <button onclick="addBookToLibrary(); render(myLibrary);" id="submit" type="submit">submit</button>
@@ -41,6 +43,7 @@
         <th>Author</th>
         <th>Pages</th>
         <th>Status</th>
+        <th>Remove?</th>
       </tr>
     </thead>
     <tbody id="container"></tbody>
