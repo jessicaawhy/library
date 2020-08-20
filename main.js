@@ -1,12 +1,12 @@
 let myLibrary = [{
-  title: 'title',
-  author: 'author',
-  pages: 5,
+  title: 'It',
+  author: 'Stephen King',
+  pages: 1138,
   status: 'Read',
 },{
-  title: 'title',
-  author: 'author',
-  pages: 3,
+  title: 'Harry Potter and the Sorcerer\'s Stone',
+  author: 'J. K. Rowling',
+  pages: 309,
   status: 'Not Read',
 }];
 
@@ -56,18 +56,23 @@ function render(array) {
     let author = document.createElement('td');
     let pages = document.createElement('td');
     let status = document.createElement('td');
+    let deleteButton = document.createElement('td');
+    let button = document.createElement('button');
+    button.setAttribute('id', index);
+    button.textContent = "x";
 
     title.textContent = item.title;
     author.textContent = item.author;
     pages.textContent = item.pages;
     status.textContent = item.status;
+    deleteButton.appendChild(button);
 
     book.appendChild(title);
     book.appendChild(author);
     book.appendChild(pages);
     book.appendChild(status);
+    book.appendChild(deleteButton);
     
-    book.setAttribute('id', index);
 
     container.appendChild(book);
   })

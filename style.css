@@ -1,7 +1,47 @@
+* {
+  font-family: 'Pontano Sans', sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: 2fr 4fr;
+}
+
+header {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
+
+
+h1 {
+  font-size: 40px;
+}
+
 form {
   display: none;
+}
+
+table {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
 }
 
 .toggle-visibility {
   display: block;
 }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+table {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+
+

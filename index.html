@@ -2,40 +2,45 @@
 <html>
 
 <head>
-<link href="./style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans&display=swap" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+
   
 </head>
 <body>
-  <h1>Library</h1>
+  <header>
+    <h1>Library</h1>
 
-  <button id="add-book" onclick="">NEW BOOK</button>
-
-  <form id="new-book-form" onsubmit="return false">
-    <ul>
-      <li>
-        <label for="title">Title:</label>
-        <input id="title" type="text" id="title" name="book-title">
-      </li>
-      <li>
-        <label for="author">Author:</label>
-        <input id="author" type="text" id="author" name="book-author">
-      </li>
-      <li>
-        <label for="pages">Pages</label>
-        <input id="pages" type="number" id="pages" name="book-pages">
-      </li>
-      <li>
-        <label for="read">Read</label>
-        <input id="read" type="radio" name="read-status" onclick="">
-        <label for="not-complete">Not complete</label>
-        <input id="not-complete" type="radio" name="read-status" onclick="">
-      </li>
-      <li>
-        <button onclick="addBookToLibrary(); render(myLibrary);" id="submit" type="submit">submit</button>
-      </li>
-    </ul>
-  </form>
-
+    <div id="add-book-container">
+      <button id="add-book" onclick="">NEW BOOK</button>
+      <form id="new-book-form" onsubmit="return false">
+        <ul>
+          <li>
+            <label for="title">Title:</label>
+            <input id="title" type="text" id="title" name="book-title">
+          </li>
+          <li>
+            <label for="author">Author:</label>
+            <input id="author" type="text" id="author" name="book-author">
+          </li>
+          <li>
+            <label for="pages">Pages</label>
+            <input id="pages" type="number" id="pages" name="book-pages">
+          </li>
+          <li>
+            <label for="read">Read</label>
+            <input id="read" type="radio" name="read-status" onclick="">
+            <label for="not-complete">Not complete</label>
+            <input id="not-complete" type="radio" name="read-status" onclick="">
+          </li>
+          <li>
+            <button onclick="addBookToLibrary(); render(myLibrary);" id="submit" type="submit">submit</button>
+          </li>
+        </ul>
+      </form>
+    </div>  
+  </header>
+ 
   <table>
     <thead>
       <tr>
