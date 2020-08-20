@@ -1,5 +1,9 @@
-// function Book(title, author, pages, status) {
-// }
+function Book(title, author, pages, status) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.status = status;
+}
 
 function addBookToLibrary() {
   let title = document.getElementById('title').value;
@@ -13,12 +17,7 @@ function addBookToLibrary() {
   }
 
   if (title && author && pages && status) {
-    let currentBook = {
-      title: title,
-      author: author,
-      pages: pages,
-      status: status, 
-    }
+    let currentBook = new Book(title, author, pages, status);
     myLibrary.push(currentBook);
     form.reset();
     toggleDisplay();
