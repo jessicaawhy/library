@@ -25,7 +25,7 @@
           </li>
           <li>
             <label for="pages">Pages</label>
-            <input id="pages" type="number" id="pages" name="book-pages">
+            <input id="pages" type="number" min="1" step="1" onkeypress="return event.charCode >= 48" id="pages" name="book-pages">
           </li>
           <li>
             <label for="read">Read</label>
