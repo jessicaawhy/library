@@ -1,8 +1,10 @@
-function Book(title, author, pages, status) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
 }
 
 function addBookToLibrary() {
@@ -96,8 +98,6 @@ function render(array) {
   createDeleteListeners(array);
   createReadListeners(array);
 }
-
-
 
 const addBook = document.querySelector('#add-book');
 const form = document.querySelector('#new-book-form');
