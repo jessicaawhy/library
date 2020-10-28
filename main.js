@@ -21,6 +21,7 @@ function addBookToLibrary() {
   if (title && author && pages && status) {
     let currentBook = new Book(title, author, pages, status);
     myLibrary.push(currentBook);
+    localStorage.setItem('library', JSON.stringify(myLibrary))
     form.reset();
     toggleDisplay();
   } else {
@@ -97,6 +98,7 @@ function render(array) {
   createChildElements(array);
   createDeleteListeners(array);
   createReadListeners(array);
+  localStorage.setItem('library', JSON.stringify(array));
 }
 
 const addBook = document.querySelector('#add-book');
@@ -107,22 +109,25 @@ function toggleDisplay() {
   form.classList.toggle('toggle-visibility');
 }
 
-// initial
+if (!localStorage.getItem('library')) {
+  let myLibrary = [];
 
-let myLibrary = [];
+  // Populate library with data
+  let book1 = new Book("It", "Stephen King", 1138, "Read");
+  myLibrary.push(book1);
+  let book2 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 309, "Not Read");
+  myLibrary.push(book2);
+  let book3 = new Book("Eloquent JavaScript", "Marijin Haverbeke", 448, "Not Read");
+  myLibrary.push(book3);
+  let book4 = new Book("The Subtle Art of Not Giving a F*ck", "Mark Manson", 224, "Not Read");
+  myLibrary.push(book4);
+  let book5 = new Book("The Hate U Give", "Angie Thomas", 444, "Not Read");
+  myLibrary.push(book5);
+  let book6 = new Book("The Gift of Fear", "Gavin de Becker", 432, "Read");
+  myLibrary.push(book6);
 
-// Populate library with data
-let book1 = new Book("It", "Stephen King", 1138, "Read");
-myLibrary.push(book1);
-let book2 = new Book("Harry Potter and the Sorcerer's Stone", "J. K. Rowling", 309, "Not Read");
-myLibrary.push(book2);
-let book3 = new Book("Eloquent JavaScript", "Marijin Haverbeke", 448, "Not Read");
-myLibrary.push(book3);
-let book4 = new Book("The Subtle Art of Not Giving a F*ck", "Mark Manson", 224, "Not Read");
-myLibrary.push(book4);
-let book5 = new Book("The Hate U Give", "Angie Thomas", 444, "Not Read");
-myLibrary.push(book5);
-let book6 = new Book("The Gift of Fear", "Gavin de Becker", 432, "Read");
-myLibrary.push(book6);
+  localStorage.setItem('library', JSON.stringify(myLibrary))
+}
 
+let myLibrary = JSON.parse(localStorage.getItem('library'))
 render(myLibrary);

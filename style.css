@@ -4,7 +4,7 @@
 
 body {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 8fr 1fr;
   grid-template-rows: 2fr 4fr;
 }
 
@@ -42,5 +42,22 @@ table {
   text-align: left;
 }
 
+table thead th:nth-child(1) {
+  width: 40%;
+}
 
+table thead th:nth-child(2) {
+  width: 30%;
+}
 
+table thead th:nth-child(3) {
+  width: 10%;
+}
+
+table thead th:nth-child(4) {
+  width: 10%;
+}
+
+table thead th:nth-child(5) {
+  width: 10%;
+}
