@@ -14,7 +14,13 @@ header {
 }
 
 h1 {
-  font-size: 40px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 15px;
 }
 
 form {
