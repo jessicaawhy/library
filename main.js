@@ -104,6 +104,31 @@ function render(array) {
 const addBook = document.querySelector('#add-book');
 const form = document.querySelector('#new-book-form');
 addBook.addEventListener('click', toggleDisplay);
+form.addEventListener('submit', function(event) {
+  let title = document.getElementById('title');
+  let author = document.getElementById('author')
+  let pages = document.getElementById('pages');
+  let valid = title.validity.valid && author.validity.valid && pages.validity.valid;
+
+  let status;
+  if (document.getElementById('read').checked) {
+    status = 'Read';
+  } else {
+    status = 'Not Read';
+  }
+
+  if(!valid) {
+    showError();
+    event.preventDefault();
+  } else {
+    let currentBook = new Book(title.value, author.value, pages.value, status);
+    myLibrary.push(currentBook);
+    localStorage.setItem('library', JSON.stringify(myLibrary))
+    form.reset();
+    toggleDisplay();
+    render(myLibrary)
+  }
+})
 
 function toggleDisplay() {
   form.classList.toggle('toggle-visibility');

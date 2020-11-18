@@ -17,15 +17,15 @@
         <ul>
           <li>
             <label for="title">Title:</label>
-            <input id="title" type="text" id="title" name="book-title">
+            <input id="title" type="text" id="title" name="book-title" required>
           </li>
           <li>
             <label for="author">Author:</label>
-            <input id="author" type="text" id="author" name="book-author">
+            <input id="author" type="text" id="author" name="book-author" required>
           </li>
           <li>
             <label for="pages">Pages</label>
-            <input id="pages" type="number" min="1" step="1" onkeypress="return event.charCode >= 48" id="pages" name="book-pages">
+            <input id="pages" type="number" min="1" step="1" onkeypress="return event.charCode >= 48" id="pages" name="book-pages" required>
           </li>
           <li>
             <label for="read">Read</label>
@@ -34,7 +34,7 @@
             <input id="not-complete" type="radio" name="read-status" onclick="">
           </li>
           <li>
-            <button onclick="addBookToLibrary(); render(myLibrary);" id="submit" type="submit">submit</button>
+            <button id="submit" type="submit">submit</button>
           </li>
         </ul>
       </form>
